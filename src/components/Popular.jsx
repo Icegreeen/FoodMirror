@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Splide, SplideSlide} from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css'
+import { Link } from 'react-router-dom';
 
 function Popular(){
-
     const [popular, setPopular] = useState([]);
 
     useEffect(() => {
@@ -12,7 +12,6 @@ function Popular(){
     }, [])
 
     const getPopular = async () => {
-
         const check = localStorage.getItem('popular');
 
         if(check) {
@@ -22,13 +21,10 @@ function Popular(){
                 `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`
             );
             const data = await api.json();
-
             localStorage.setItem('popular', JSON.stringify(data.recipes));
 
             setPopular(data.recipes);
-            console.log(data.recipes)
         }
-
     }
 
     return (
@@ -40,15 +36,25 @@ function Popular(){
                     arrows: false,
                     pagination: false,
                     drag: 'free',
-                    gap: '5rem'
+                    gap: '1rem',
+                    breakpoints: {
+                        768: {
+                          perPage: 2,
+                        },
+                        480: {
+                          perPage: 1,
+                        },
+                    },
                 }}>
                     {popular.map((recipe) => {
                         return (
                             <SplideSlide key={recipe.id}>
                                 <Card>
-                                    <p>{recipe.title}</p>
-                                    <img src={recipe.image} alt={recipe.title} />
-                                    <Gradient />
+                                    <Link to={"/recipe/" + recipe.id}>
+                                        <p>{recipe.title}</p>
+                                        <img src={recipe.image} alt={recipe.title} />
+                                        <Gradient />
+                                    </Link>
                                 </Card>
                             </SplideSlide>
                         );
@@ -60,14 +66,21 @@ function Popular(){
 }
 
 const Wrapper = styled.div`
-    margin: 4rem 0rem;
+    margin: 3rem 0rem;
 `;
 
 const Card = styled.div`
-    min-height: 25rem;
+    margin: 1rem;
+    min-height: 20rem;
     border-radius: 2rem;
     overflow: hidden;
     position: relative;
+
+    :hover {
+        opacity: 0.7;
+    }
+
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.7);
 
     img {
         border-radius: 2rem;

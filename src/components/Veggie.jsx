@@ -1,7 +1,8 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import { Splide, SplideSlide} from '@splidejs/react-splide';
-import '@splidejs/splide/dist/css/splide.min.css'
+import '@splidejs/splide/dist/css/splide.min.css';
+import { Link } from 'react-router-dom';
 
 function Veggie(){
     const [veggie, setVeggie] = useState([]);
@@ -37,15 +38,25 @@ function Veggie(){
                     arrows: false,
                     pagination: false,
                     drag: 'free',
-                    gap: '5rem'
+                    gap: '1rem',
+                    breakpoints: {
+                        768: {
+                          perPage: 2,
+                        },
+                        480: {
+                          perPage: 1,
+                        },
+                      },
                 }}>
                     {veggie.map((recipe) => {
                         return (
                             <SplideSlide key={recipe.id}>
                                 <Card>
-                                    <p>{recipe.title}</p>
-                                    <img src={recipe.image} alt={recipe.title} />
-                                    <Gradient />
+                                    <Link to={"/recipe/" + recipe.id}>
+                                        <p>{recipe.title}</p>
+                                        <img src={recipe.image} alt={recipe.title} />
+                                        <Gradient />
+                                    </Link>
                                 </Card>
                             </SplideSlide>
                         );
@@ -57,14 +68,21 @@ function Veggie(){
 }
 
 const Wrapper = styled.div`
-    margin: 4rem 0rem;
+    margin: 1rem 0rem;
 `;
 
 const Card = styled.div`
-    min-height: 25rem;
+    margin: 1rem;
+    min-height: 15rem;
     border-radius: 2rem;
     overflow: hidden;
     position: relative;
+
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.5);
+    
+    :hover {
+        opacity: 0.7;
+    }
 
     img {
         border-radius: 2rem;
@@ -85,7 +103,7 @@ const Card = styled.div`
         width: 100%;
         text-align: center;
         font-size: 1rem;
-        height: 40%;
+        height: 25%;
         display: flex;
         justify-content: center;
         align-items: center;

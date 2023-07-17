@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+<h1 align="left">
+    <a">FoodMirror</a>
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Project status: Completed :heavy_check_mark:
 
-## Available Scripts
+![Captura de tela de 2023-05-30 04-35-14](https://github.com/Icegreeen/my-blog/assets/56550632/3081b31d-c84f-4073-a1b2-4c5693dd4cd6)
+ 
+# :pushpin: Table of Contents
 
-In the project directory, you can run:
+* [Running Locally](#construction_worker-running-locally)
+* [FAQ](#postbox-faq)
+* [Issues](#bug-issues)
+* [Contributing](#tada-contributing)
 
-### `npm start`
+## :construction_worker: Running Locally
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Disclaimer: This project fetches data from my personal [GraphCMS](https://graphcms.com/) workspace, thus it's necessary to define the CMS endpoint as a environment variable, otherwise it's not possible to fully execute the scripts bellow
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Clone repository
+```bash
+git clone https://github.com/Icegreeen/FoodMirror.git
+```
 
-### `npm test`
+#### Define environment variables
+```bash
+cp .env.local.example .env.local
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Install dependencies & execute web application in development mode
+```bash
+yarn
+yarn dev
+```
 
-### `npm run build`
+Define the environment variables by creating a .env.local file similar to [.env.local.example](https://github.com/Icegreeen/my-blog.git.env.local.example)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# :postbox: Faq
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Question:** What are the technologies used in this project?
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Answer:** [Next.js](https://nextjs.org/), [Styled Component](https://styled-components.com/) and [GraphCMS](https://graphcms.com/)
 
-### `npm run eject`
+**Question** Why Next.js instead of other frameworks of React out there?
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Answer** I chose Next.js in order to opt out for different rendering strategies
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# :bug: Issues
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Feel free to **file a new issue** with a respective title and description. If you already found a solution to your problem, **I would love to review your pull request**!
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# :tada: Contributing
 
-## Learn More
+Check out the [contributing](https://github.com/Icegreeen/my-blog/blob/main/CONTRIBUTING.md) page to see the best places to file issues, start discussions and begin contributing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
