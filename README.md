@@ -4,6 +4,8 @@
 
 > Project status: Completed :heavy_check_mark:
 
+![175293884-7638318d-b483-43dc-8c69-b6f3a55bcd79 (1)](https://github.com/Icegreeen/FoodMirror/assets/56550632/6ad82148-544d-4a82-9f2d-ecb15f64a48e)
+
 ![Captura de tela de 2023-07-17 17-06-13](https://github.com/Icegreeen/FoodMirror/assets/56550632/d824f59b-c6e8-44e7-9879-e77674232643)
 
 ![Captura de tela de 2023-07-17 17-06-41](https://github.com/Icegreeen/FoodMirror/assets/56550632/37c9daac-a013-4f18-be54-2848a52dce5d)
